@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="extension1.css">
+    <link rel="stylesheet" href="extension2.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,10 +20,21 @@
     </header>
     <main>
         <h2 class="counter"></h2>
-        <div>
-            <button class="step-btn " value="5">5</button>
-            <button class="step-btn" value="10">10</button>
-            <button class="step-btn" value="15">15</button>
+        <div class="flex wrapper wrap">
+
+            <div>
+                <p class="label">Steps</p>
+                <button class="step-btn " value="5">5</button>
+                <button class="step-btn" value="10">10</button>
+                <button class="step-btn" value="15">15</button>
+            </div>
+            <div>
+                <p class="label">Max</p>
+                <button class="limit-btn" value="15">15</button>
+                <button class="limit-btn" value="100">100</button>
+                <button class="limit-btn" value="200">200</button>
+            </div>
+
         </div>
         <button class="btn inc">Increment</button>
         <button class="btn dec">Decrement</button>
@@ -32,7 +43,7 @@
     <footer>
 
     </footer>
-    <script src="./extension1.js"></script>
+    <script src="./extension2.js"></script>
 </body>
 
 </html>
