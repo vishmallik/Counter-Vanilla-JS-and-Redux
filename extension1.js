@@ -16,7 +16,7 @@ counter.innerText = count_value;
 
 steps.forEach((btn) => {
   btn.addEventListener("click", (event) => {
-    store.dispatch({ type: "step-change", newStep: +event.target.value });
+    store.dispatch({ type: "step-change", payload: +event.target.value });
   });
 });
 
@@ -46,23 +46,17 @@ store.subscribe(() => {
   activeClass();
 });
 
-function reducer(prevState = { count: 0, step: 1 }, action) {
+function reducer(state = { count: 0, step: 1 }, action) {
   switch (action.type) {
     case "increment":
-      return {
-        count: prevState.count + (action.step || 1),
-        step: prevState.step,
-      };
+      return { ...state, count: state.count + (action.step || 1) };
     case "decrement":
-      return {
-        count: prevState.count - (action.step || 1),
-        step: prevState.step,
-      };
+      return { ...state, count: state.count - (action.step || 1) };
     case "reset":
       return { count: 0, step: 1 };
     case "step-change":
-      return { count: prevState.count, step: action.newStep };
+      return { ...state, step: action.payload };
     default:
-      return prevState;
+      return state;
   }
 }
